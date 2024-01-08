@@ -1,6 +1,6 @@
 <?php
 include("Header_User.php");
-include("dbConnection.php")
+include("dbConnection.php");
 ?>
 
 
