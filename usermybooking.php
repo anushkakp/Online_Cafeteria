@@ -37,8 +37,7 @@ include("dbConnection.php");
 $qry = "SELECT `tb_product`.*,`token`.*,`payment`.`token` FROM `token` ,`tb_product`,`payment`,`cart` WHERE `token`.`payid`=`payment`.`payid` 
 AND `payment`.`token`='yes'  AND `payment`.`pdid`=`tb_product`.`productcode` AND `cart`.`paid`='yes' AND `cart`.`pid`=`payment`.`pdid`
 AND `cart`.`uid`='$centerid'";
-$result = mysqli_query($conn, $qry);
-echo "<h1>".$qry."</h1>";
+$result = mysqli_query($conn, $qry); 
       if ($result->num_rows > 0) {
             while ($row = mysqli_fetch_array($result)) {
                 ?>
@@ -96,8 +95,6 @@ echo "<h1>".$qry."</h1>";
                 <?php
                 }
 } else {
-    echo "bjkhfvdkjv";
-    echo "<h1>".$centerid."</h1>";
     echo "  <center> <h2 style='color: red;'>.... No Data Found ...</h2></center> ";
 }
 ?>
